@@ -111,6 +111,7 @@ async function onStreamUp(e) {
 }
 
 async function main() {
+    console.log(`Starting in prod mode: ${prod}`)
     await apiClient.eventSub.deleteAllSubscriptions();
     const usernames = await getNotifyUsernames();
     const subscriptions = await subscribeToStreams(usernames, onStreamUp);

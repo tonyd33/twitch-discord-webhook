@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    twitch-discord-webhook:
+        ports:
+            - '8080:8080'
+        environment:
+            - TWITCH_CLIENT_ID=
+            - TWITCH_CLIENT_SECRET=
+            - 'DISCORD_WEBHOOK_URL=' # e.g. https://discord.com/api/webhooks/something
+            - DOMAIN= # e.g. webhook.example.com
+        volumes:
+            - './usernames.txt:/app/usernames.txt'
+        image: tonyd33/twitch-discord-webhook

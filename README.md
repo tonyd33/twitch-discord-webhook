@@ -3,8 +3,27 @@
 Simple script to forward messages when a streamer goes live on Twitch to Discord. Created because the bot that I was using paywalls
 adding more than one streamer to send a notification for.
 
-## Setup and usage
+# Setup and usage
 
+## Docker (recommended)
+
+Using CLI:
+```
+docker run -d \
+    -p 8080:8080 \
+    -e TWITCH_CLIENT_ID= \
+    -e TWITCH_CLIENT_SECRET= \
+    -e DISCORD_WEBHOOK_URL= \
+    -e DOMAIN= \
+    -v $(pwd)/usernames.txt:/app/usernames.txt \
+    tonyd33/twitch-discord-webhook
+```
+
+Using compose:
+
+A [template docker compose file](docker-compose-template.yml) is provided.
+
+## From source
 ```
 npm i
 
